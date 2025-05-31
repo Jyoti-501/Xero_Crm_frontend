@@ -6,7 +6,7 @@ function CampaignHistory() {
   const [campaigns, setCampaigns] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/campaigns/history')
+    axios.get('https://xero-crm-backend-151f.vercel.app/api/campaigns/history')
       .then(res => setCampaigns(res.data))
       .catch(err => console.error(err));
   }, []);

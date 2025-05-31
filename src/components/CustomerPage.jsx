@@ -9,7 +9,7 @@ function CustomerPage() {
 
   const fetchCustomers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/customers');
+      const res = await axios.get('https://xero-crm-backend-151f.vercel.app/api/customers');
       setCustomers(res.data);
     } catch (err) {
       console.error('Error fetching customers:', err);
@@ -22,7 +22,7 @@ function CustomerPage() {
 
   const handleSubmit = async () => {
     try {
-      await axios.post('http://localhost:5000/api/customers/add', form);
+      await axios.post('https://xero-crm-backend-151f.vercel.app/api/customers/add', form);
       setForm({ name: '', email: '', spend: '', visits: '', last_active: '' });
       fetchCustomers();
     } catch (err) {

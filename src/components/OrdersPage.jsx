@@ -7,7 +7,7 @@ function OrdersPage() {
   const [form, setForm] = useState({ customer_id: '', amount: '', date: '' });
 
   const fetchOrders = async () => {
-    const res = await axios.get('http://localhost:5000/api/orders');
+    const res = await axios.get('https://xero-crm-backend-151f.vercel.app/api/orders');
     setOrders(res.data);
   };
 
@@ -16,7 +16,7 @@ function OrdersPage() {
   }, []);
 
   const handleSubmit = async () => {
-    await axios.post('http://localhost:5000/api/orders/add', form);
+    await axios.post('https://xero-crm-backend-151f.vercel.app/api/orders/add', form);
     setForm({ customer_id: '', amount: '', date: '' });
     fetchOrders();
   };
