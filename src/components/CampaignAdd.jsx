@@ -8,7 +8,7 @@ function CampaignAdd() {
 
   const handleSubmit = async () => {
     if (!name || !rules) return alert('Please fill all fields');
-    await axios.post('http://localhost:5000/api/campaigns', { name, rules });
+    await axios.post('https://xero-crm-backend-7cz7.vercel.app/api/campaigns', { name, rules });
     alert('Campaign launched!');
     setName('');
     setRules('');
